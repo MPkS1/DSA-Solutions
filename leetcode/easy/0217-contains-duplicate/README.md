@@ -44,9 +44,9 @@ All elements are distinct.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 19 ms (beats 48.14%)  
-**Memory:** 108.2 MB (beats 37.96%)  
-**Submitted:** 2026-09-14T05:30:06.981Z  
+**Runtime:** 0 ms  
+**Memory:** 42.6 MB  
+**Submitted:** 2026-09-14T05:32:42.927Z  
 
 ```java
 class Solution {
@@ -54,11 +54,9 @@ class Solution {
         HashSet<Integer> hs=new HashSet<>();
         for(int i:nums)
         {
-            if(hs.contains(i))
-                return true;
             hs.add(i);
         }
-        return false;
+        return hs.size()!=nums.length;
     }
 }
 ```
