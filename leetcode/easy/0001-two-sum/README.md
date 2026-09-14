@@ -54,15 +54,15 @@ Output: [0,1]
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 43 MB  
-**Submitted:** 2026-09-14T02:15:29.624Z  
+**Memory:** 42.8 MB  
+**Submitted:** 2026-09-14T02:15:58.670Z  
 
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         for(int i=0;i<nums.length;i++)
         {
-            for(int j=i;j<nums.length;j++)
+            for(int j=i+1;j<nums.length;j++)
             {
                 if(nums[i]+nums[j]==target)
                 {
