@@ -56,8 +56,8 @@ The special numbers could be 1, 1, 1, 1, and 1, thus making their sum 5 and the 
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 43 MB  
-**Submitted:** 2026-09-15T16:10:01.265Z  
+**Memory:** 42.5 MB  
+**Submitted:** 2026-09-15T16:13:07.023Z  
 
 ```java
 class Solution {
@@ -67,11 +67,10 @@ class Solution {
         {
             sum+=nums[i];
         }
-        if(sum==nums[nums.length-2])
-        {
-            return nums[nums.length-2];
-        }
-        return nums[nums.length-1];
+        int ol1=nums.length-2;
+        int ol2=nums.length-1;
+        System.out.println(sum);
+        return (sum==nums[ol1])?nums[ol2]:nums[ol1];
     }
 }
 ```
