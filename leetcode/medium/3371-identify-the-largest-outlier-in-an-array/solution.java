@@ -1,13 +1,25 @@
 class Solution {
     public int getLargestOutlier(int[] nums) {
-        int sum=0;
-        for(int i=0;i<=nums.length-3;i++)
-        {
-            sum+=nums[i];
+        int total = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums) {
+            total += num;
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        int ol1=nums.length-2;
-        int ol2=nums.length-1;
-        System.out.println(sum);
-        return (sum==nums[ol1])?nums[ol2]:nums[ol1];
+
+        int answer = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            int outlier = total - 2 * num;
+
+            if (map.containsKey(outlier)) {
+                if (outlier != num || map.get(outlier) > 1) {
+                    answer = Math.max(answer, outlier);
+                }
+            }
+        }
+
+        return answer;
     }
 }
