@@ -56,14 +56,14 @@ The special numbers could be 1, 1, 1, 1, and 1, thus making their sum 5 and the 
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 42.5 MB  
-**Submitted:** 2026-09-15T16:13:07.023Z  
+**Memory:** 42.7 MB  
+**Submitted:** 2026-09-15T16:13:24.615Z  
 
 ```java
 class Solution {
     public int getLargestOutlier(int[] nums) {
         int sum=0;
-        for(int i=0;i<nums.length-3;i++)
+        for(int i=0;i<=nums.length-3;i++)
         {
             sum+=nums[i];
         }
