@@ -5,10 +5,9 @@ class Solution {
         {
             sum+=nums[i];
         }
-        if(sum==nums[nums.length-2])
-        {
-            return nums[nums.length-2];
-        }
-        return nums[nums.length-1];
+        int ol1=nums.length-2;
+        int ol2=nums.length-1;
+        System.out.println(sum);
+        return (sum==nums[ol1])?nums[ol2]:nums[ol1];
     }
 }
