@@ -55,22 +55,34 @@ The special numbers could be 1, 1, 1, 1, and 1, thus making their sum 5 and the 
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-09-15T16:13:24.615Z  
+**Runtime:** 85 ms (beats 70.19%)  
+**Memory:** 114.6 MB (beats 26.71%)  
+**Submitted:** 2026-09-15T16:22:59.147Z  
 
 ```java
 class Solution {
     public int getLargestOutlier(int[] nums) {
-        int sum=0;
-        for(int i=0;i<=nums.length-3;i++)
-        {
-            sum+=nums[i];
+        int total = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums) {
+            total += num;
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        int ol1=nums.length-2;
-        int ol2=nums.length-1;
-        System.out.println(sum);
-        return (sum==nums[ol1])?nums[ol2]:nums[ol1];
+
+        int answer = Integer.MIN_VALUE;
+
+        for (int num : nums) {
+            int outlier = total - 2 * num;
+
+            if (map.containsKey(outlier)) {
+                if (outlier != num || map.get(outlier) > 1) {
+                    answer = Math.max(answer, outlier);
+                }
+            }
+        }
+
+        return answer;
     }
 }
 ```
