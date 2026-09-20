@@ -42,9 +42,9 @@ Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3], [2,1
 ## Solution
 
 **Language:** Java  
-**Runtime:** 48 ms (beats 73.47%)  
-**Memory:** 50.2 MB (beats 56.16%)  
-**Submitted:** 2026-09-20T06:37:01.942Z  
+**Runtime:** 50 ms (beats 38.83%)  
+**Memory:** 50.3 MB (beats 26.90%)  
+**Submitted:** 2026-09-20T06:37:29.770Z  
 
 ```java
 class Solution {
