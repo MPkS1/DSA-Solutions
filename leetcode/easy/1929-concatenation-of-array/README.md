@@ -45,8 +45,8 @@ Explanation: The array ans is formed as follows:
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 97.61%)  
-**Memory:** 47.2 MB (beats 36.69%)  
-**Submitted:** 2026-09-20T10:03:35.427Z  
+**Memory:** 47.1 MB (beats 76.19%)  
+**Submitted:** 2026-09-20T10:05:21.210Z  
 
 ```java
 class Solution {
