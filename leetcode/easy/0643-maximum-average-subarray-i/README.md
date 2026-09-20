@@ -38,26 +38,26 @@ Output: 5.00000
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 45.3 MB  
-**Submitted:** 2026-09-20T06:52:21.767Z  
+**Runtime:** 3 ms (beats 74.23%)  
+**Memory:** 69.5 MB (beats 79.70%)  
+**Submitted:** 2026-09-20T06:57:58.083Z  
 
 ```java
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        double max=0;
+        double max=0,avg=0;
         int i=0,j=k-1,sum=0;
         for(int l=0;l<k;l++)
             sum+=nums[l];
-        max=sum/k;
+        max=(double)sum/k;
         while(j<nums.length-1)
         {
             sum-=nums[i++];
             sum+=nums[++j];
-            if(sum/k>max)
+            avg=(double)sum/k;
+            if(max<avg)
             {
-                 max=sum/k;
-                System.out.println(max);
+                 max=avg;
             }   
             
         }
