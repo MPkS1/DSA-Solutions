@@ -39,8 +39,8 @@ Output: 5.00000
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 45 MB  
-**Submitted:** 2026-09-20T06:51:45.300Z  
+**Memory:** 45.3 MB  
+**Submitted:** 2026-09-20T06:52:21.767Z  
 
 ```java
 class Solution {
@@ -50,7 +50,6 @@ class Solution {
         for(int l=0;l<k;l++)
             sum+=nums[l];
         max=sum/k;
-        System.out.println(max);
         while(j<nums.length-1)
         {
             sum-=nums[i++];
