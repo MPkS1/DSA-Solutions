@@ -44,9 +44,9 @@ Output: [3,4,6,16,17]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.5 MB  
-**Submitted:** 2026-09-20T10:08:50.144Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 43.7 MB (beats 99.06%)  
+**Submitted:** 2026-09-20T10:09:55.416Z  
 
 ```java
 class Solution {
@@ -55,8 +55,7 @@ class Solution {
         res[0]=nums[0];
         for(int i=1;i<nums.length;i++)
         {
-            res[i]=nums[i-1]+nums[i];
-            System.out.println(nums[i-1]+' '+nums[i]);
+            res[i]=res[i-1]+nums[i];
         }
         return res;
     }
