@@ -42,42 +42,45 @@ Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3], [2,1
 ## Solution
 
 **Language:** Java  
-**Runtime:** 49 ms (beats 56.42%)  
-**Memory:** 50.3 MB (beats 41.53%)  
-**Submitted:** 2026-09-20T06:36:36.629Z  
+**Runtime:** 48 ms (beats 73.47%)  
+**Memory:** 50.2 MB (beats 56.16%)  
+**Submitted:** 2026-09-20T06:37:01.942Z  
 
 ```java
 class Solution {
+
     public int subarraysWithKDistinct(int[] nums, int k) {
-        
         return atMost(nums, k) - atMost(nums, k - 1);
     }
 
     public int atMost(int[] nums, int k) {
-        
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        
-        int i = 0;
-        int res = 0;
 
-        for(int j = 0; j < nums.length; j++)
-        {
-            hm.put(nums[j], hm.getOrDefault(nums[j], 0) + 1);
+        HashMap<Integer, Integer> map = new HashMap<>();
 
-            while(hm.size() > k)
-            {
-                hm.put(nums[i], hm.get(nums[i]) - 1);
+        int left = 0;
+        int count = 0;
 
-                if(hm.get(nums[i]) == 0)
-                    hm.remove(nums[i]);
+        for (int right = 0; right < nums.length; right++) {
 
-                i++;
+            map.put(nums[right],
+                    map.getOrDefault(nums[right], 0) + 1);
+
+            while (map.size() > k) {
+
+                map.put(nums[left],
+                        map.get(nums[left]) - 1);
+
+                if (map.get(nums[left]) == 0) {
+                    map.remove(nums[left]);
+                }
+
+                left++;
             }
 
-            res = res + (j - i + 1);
+            count += right - left + 1;
         }
 
-        return res;
+        return count;
     }
 }
 ```
