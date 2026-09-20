@@ -5,7 +5,6 @@ class Solution {
         for(int l=0;l<k;l++)
             sum+=nums[l];
         max=sum/k;
-        System.out.println(max);
         while(j<nums.length-1)
         {
             sum-=nums[i++];
