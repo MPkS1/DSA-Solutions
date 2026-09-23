@@ -46,21 +46,22 @@ Output: []
 ## Solution
 
 **Language:** Java  
-**Runtime:** 22 ms (beats 32.91%)  
-**Memory:** 72.2 MB (beats 16.25%)  
-**Submitted:** 2026-09-23T15:42:04.976Z  
+**Runtime:** 0 ms  
+**Memory:** 42.8 MB  
+**Submitted:** 2026-09-23T15:42:15.178Z  
 
 ```java
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> result = new ArrayList<>();
-        HashSet<Integer> set = new HashSet<>();
 
         for (int num : nums) {
-            if (set.contains(num)) {
-                result.add(num);
+            int index = Math.abs(num) - 1;
+
+            if (nums[index] < 0) {
+                result.add(Math.abs(num));
             } else {
-                set.add(num);
+                nums[index] = -nums[index];
             }
         }
 
