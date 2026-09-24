@@ -39,9 +39,9 @@ Output: 0
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.5 MB  
-**Submitted:** 2026-09-24T01:32:45.346Z  
+**Runtime:** 27 ms (beats 9.58%)  
+**Memory:** 51.6 MB (beats 42.88%)  
+**Submitted:** 2026-09-24T01:34:08.166Z  
 
 ```java
 class Solution {
@@ -52,12 +52,12 @@ class Solution {
         for(int i=0;i<nums.length;i++)
         {
             sum+=nums[i];
-            int rem=sum%k;
+            int rem=((sum % k) + k) % k;
             if(hm.containsKey(rem))
             {
                 count+=hm.get(rem);
             }
-            hm.put(rem,hm.getOrDefault(rem,1)+1);
+            hm.put(rem,hm.getOrDefault(rem,0)+1);
         }
         return count;
     }
