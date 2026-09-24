@@ -41,9 +41,9 @@ Explanation: No subarray contains the element 4 at least 3 times.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.1 MB  
-**Submitted:** 2026-09-24T06:45:04.319Z  
+**Runtime:** 5 ms (beats 86.43%)  
+**Memory:** 109.7 MB (beats 27.44%)  
+**Submitted:** 2026-09-24T06:45:14.306Z  
 
 ```java
 class Solution {
