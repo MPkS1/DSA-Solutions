@@ -35,24 +35,27 @@ Explanation: when we rotate 9 times, we'll get [3, 9, 1, 7] as resultant array.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T09:47:11.503Z  
+**Submitted:** 2026-09-24T09:51:34.248Z  
 
 ```java
 class Solution {
-    public void rotateArr(int[] arr, int d) {
+    public void rotateArr(int arr[], int d) {
+        // code here
         int n=arr.length;
         d=d%n;
-        reverse(arr,0,d-1);
-        reverse(arr,d,n-1);
-        reverse(arr,0,n-1);
+        reversearr(arr,0,d-1);
+        reversearr(arr,d,n-1);
+        reversearr(arr,0,n-1);
     }
-    public void reverse(int[] arr,int l,int r) {
-        while(l<r) {
-            int t=arr[l];
-            arr[l]=arr[r];
-            arr[r]=t;
-            l++;
-            r--;
+    public void reversearr(int[] a,int i,int j)
+    {
+        while(i<j)
+        {
+            int t=a[j];
+            a[j]=a[i];
+            a[i]=t;
+            i++;
+            j--;
         }
     }
 }
