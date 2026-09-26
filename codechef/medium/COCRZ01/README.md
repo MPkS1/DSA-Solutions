@@ -74,7 +74,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T05:49:54.481Z  
+**Submitted:** 2026-09-26T05:56:10.478Z  
 
 ```java
 class Solution {
@@ -83,8 +83,8 @@ class Solution {
         HashMap<Integer,Integer> hm=new HashMap<>();
         for(int[] i:intervalList)
         {
-            int j=i[0];
-            hm.put(j,hm.getOrDefault(j,0)+1);
+            int j=i[0],k=i[1];
+            hm.put(j,k);
         }
         return intervalList.size()-hm.size();
     }
