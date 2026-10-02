@@ -54,34 +54,33 @@ An input string is valid if:
 ## Solution
 
 **Language:** Java  
-**Runtime:** 4 ms (beats 36.53%)  
-**Memory:** 43.3 MB (beats 40.99%)  
-**Submitted:** 2026-09-20T07:10:33.387Z  
+**Runtime:** 3 ms (beats 85.93%)  
+**Memory:** 43.8 MB (beats 5.70%)  
+**Submitted:** 2026-10-02T00:33:16.139Z  
 
 ```java
 class Solution {
-    public boolean isValid(String s) {
-        Stack<Character> st=new Stack<>();
-        for(int i=0;i<s.length();i++)
-        {   
-            char c=s.charAt(i);
-            if(c=='(' || c=='{' || c=='[')
-                st.push(c);
+    public boolean isValid(String s1) {
+        Stack<Character> s=new Stack<>();
+        for(char c:s1.toCharArray())
+        {
+            if(c=='('||c=='['||c=='{')
+                s.push(c);
             else
             {
-                if(st.size()==0)
+                if(s.size()==0)
                     return false;
-                if(st.peek()=='('&&c==')')
-                    st.pop();
-                else if(st.peek()=='{'&&c=='}')
-                    st.pop();
-                else if(st.peek()=='['&&c==']')
-                    st.pop();
+                else if(s.peek()=='('&&c==')')
+                    s.pop();
+                else if(s.peek()=='['&&c==']')
+                    s.pop();
+                else if(s.peek()=='{'&&c=='}')
+                    s.pop();
                 else
                     return false;
             }
         }
-        return (st.size()==0)?true:false;
+        return s.size()==0?true:false;
     }
 }
 ```
