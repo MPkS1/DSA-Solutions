@@ -45,9 +45,9 @@ Output: 3
 ## Solution
 
 **Language:** Java  
-**Runtime:** 5 ms  
-**Memory:** 43.1 MB  
-**Submitted:** 2026-10-04T07:31:16.165Z  
+**Runtime:** 4 ms  
+**Memory:** 42.9 MB  
+**Submitted:** 2026-10-04T07:32:08.410Z  
 
 ```java
 class Solution {
@@ -55,7 +55,7 @@ class Solution {
         if(nums.length==0)
             return 0;
         Arrays.sort(nums);
-        int i=0,j=1,max=Integer.MIN_VALUE,c=1;
+        int i=0,j=1,max=Integer.MIN_VALUE,c=0;
         while(i<nums.length-1&&j<nums.length)
         {
             while(nums[i]==nums[j]&&j<nums.length-1)
@@ -64,6 +64,10 @@ class Solution {
             }
             if(nums[j]-nums[i]==1)
             {
+                if(c==0)
+                {
+                    c++;
+                }
                 c++;
                 System.out.println(i+" "+j+" "+c);
             }
