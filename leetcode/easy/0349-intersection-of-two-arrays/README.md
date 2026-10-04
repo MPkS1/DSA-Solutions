@@ -36,8 +36,8 @@ Explanation: [4,9] is also accepted.
 
 **Language:** Java  
 **Runtime:** 0 ms  
-**Memory:** 43 MB  
-**Submitted:** 2026-10-04T03:34:58.260Z  
+**Memory:** 42.8 MB  
+**Submitted:** 2026-10-04T03:36:21.318Z  
 
 ```java
 class Solution {
@@ -53,8 +53,8 @@ class Solution {
                 res.add(i);
             }
         }
-        int n=hs.size();
-        int[] arr=new int[n-1];
+        int n=res.size();
+        int[] arr=new int[n];
         int i=0;
         for(int j:res)
         {
