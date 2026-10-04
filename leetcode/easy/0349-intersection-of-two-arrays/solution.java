@@ -11,8 +11,8 @@ class Solution {
                 res.add(i);
             }
         }
-        int n=hs.size();
-        int[] arr=new int[n-1];
+        int n=res.size();
+        int[] arr=new int[n];
         int i=0;
         for(int j:res)
         {
