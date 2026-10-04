@@ -45,9 +45,9 @@ Output: 3
 ## Solution
 
 **Language:** Java  
-**Runtime:** 4 ms  
-**Memory:** 42.9 MB  
-**Submitted:** 2026-10-04T07:32:08.410Z  
+**Runtime:** 22 ms (beats 89.13%)  
+**Memory:** 77.6 MB (beats 88.14%)  
+**Submitted:** 2026-10-04T07:34:09.531Z  
 
 ```java
 class Solution {
@@ -55,37 +55,18 @@ class Solution {
         if(nums.length==0)
             return 0;
         Arrays.sort(nums);
-        int i=0,j=1,max=Integer.MIN_VALUE,c=0;
-        while(i<nums.length-1&&j<nums.length)
-        {
-            while(nums[i]==nums[j]&&j<nums.length-1)
-            {
-                j++;
-            }
-            if(nums[j]-nums[i]==1)
-            {
-                if(c==0)
-                {
-                    c++;
-                }
+        int c=1,max=1;
+        for(int i=1;i<nums.length;i++) {
+            if(nums[i]==nums[i-1])
+                continue;
+            if(nums[i]==nums[i-1]+1)
                 c++;
-                System.out.println(i+" "+j+" "+c);
+            else {
+                max=Math.max(max,c);
+                c=1;
             }
-            else
-            {
-                if(max<c)
-                {
-                    max=c;
-                }
-            }
-            i=j;
-            j++;
         }
-        if(max<c)
-        {
-            max=c;
-        }
-        return max;
+        return Math.max(max,c);
     }
 }
 ```
