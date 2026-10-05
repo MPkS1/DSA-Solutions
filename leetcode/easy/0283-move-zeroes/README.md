@@ -41,23 +41,24 @@ Output: [0]
 
 **Language:** Java  
 **Runtime:** 2 ms (beats 91.45%)  
-**Memory:** 48 MB (beats 6.89%)  
-**Submitted:** 2026-10-05T06:13:52.787Z  
+**Memory:** 47.5 MB (beats 87.41%)  
+**Submitted:** 2026-10-05T06:16:36.497Z  
 
 ```java
 class Solution {
     public void moveZeroes(int[] nums) {
         int i=0,j=0;
-        while(j<nums.length)
+        for(;j<nums.length;j++)
         {
             if(nums[j]!=0)
             {
-                int t=nums[i];
                 nums[i]=nums[j];
-                nums[j]=t;
                 i++;
             }
-            j++;
+        }
+        for(;i<nums.length;i++)
+        {
+            nums[i]=0;   
         }
     }
 }
