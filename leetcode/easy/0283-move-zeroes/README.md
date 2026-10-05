@@ -40,25 +40,24 @@ Output: [0]
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms  
-**Memory:** 43.2 MB  
-**Submitted:** 2026-09-15T15:53:45.983Z  
+**Runtime:** 2 ms (beats 91.45%)  
+**Memory:** 48 MB (beats 6.89%)  
+**Submitted:** 2026-10-05T06:13:52.787Z  
 
 ```java
 class Solution {
     public void moveZeroes(int[] nums) {
-        int idx=0;
-        for(int i=0;i<nums.length;i++)
+        int i=0,j=0;
+        while(j<nums.length)
         {
-            if(nums[i]!=0)
+            if(nums[j]!=0)
             {
-                nums[idx++]=nums[i];
-                System.out.println(idx+"  "+nums[i]);
+                int t=nums[i];
+                nums[i]=nums[j];
+                nums[j]=t;
+                i++;
             }
-        }
-        while(idx<nums.length)
-        {
-            nums[idx++]=0;
+            j++;
         }
     }
 }
