@@ -1,34 +1,20 @@
 class Solution {
     public String frequencySort(String s) {
         HashMap<Character,Integer> hm=new HashMap<>();
-        int max=0;
-
-        for(char c:s.toCharArray())
-        {
-            hm.put(c,hm.getOrDefault(c,0)+1);
-
-            if(hm.get(c)>max)
-                max=hm.get(c);
-        }
-
         StringBuilder sb=new StringBuilder();
-
-        while(max>0)
+        for(char i:s.toCharArray())
         {
-            for(char c:hm.keySet())
-            {
-                if(hm.get(c)==max)
-                {
-                    for(int j=0;j<max;j++)
-                    {
-                        sb.append(c);
-                    }
-                }
-            }
-
-            max--;
+            hm.put(i,hm.getOrDefault(i,0)+1);
         }
-
+        List<Character> l=new ArrayList<>(hm.keySet());
+        l.sort((a,b)->hm.get(b)-hm.get(a));
+        for(char c:l)
+        {
+            for(int i=0;i<hm.get(c);i++)
+            {
+                sb.append(c);
+            }
+        }
         return sb.toString();
     }
 }
