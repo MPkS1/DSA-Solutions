@@ -50,18 +50,17 @@ Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 99.92%)  
-**Memory:** 77.2 MB (beats 48.90%)  
-**Submitted:** 2026-09-15T01:07:35.035Z  
+**Memory:** 77.2 MB (beats 66.20%)  
+**Submitted:** 2026-10-07T23:01:21.295Z  
 
 ```java
 class Solution {
     public int maxSubArray(int[] nums) {
-        int cs=nums[0];
-        int ms=nums[0];
+        int cs=nums[0],ms=nums[0];
         for(int i=1;i<nums.length;i++)
         {
-            cs=Math.max(nums[i],cs+nums[i]);
-            ms=Math.max(cs,ms);
+            cs=Math.max(nums[i],nums[i]+cs);
+            ms=Math.max(ms,cs);
         }
         return ms;
     }
