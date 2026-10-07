@@ -50,42 +50,28 @@ Note that 'A' and 'a' are treated as two different characters.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 32 ms (beats 12.21%)  
-**Memory:** 47.2 MB (beats 26.03%)  
-**Submitted:** 2026-10-05T05:24:01.395Z  
+**Runtime:** 15 ms (beats 53.10%)  
+**Memory:** 46.8 MB (beats 39.50%)  
+**Submitted:** 2026-10-07T23:33:12.208Z  
 
 ```java
 class Solution {
     public String frequencySort(String s) {
         HashMap<Character,Integer> hm=new HashMap<>();
-        int max=0;
-
-        for(char c:s.toCharArray())
-        {
-            hm.put(c,hm.getOrDefault(c,0)+1);
-
-            if(hm.get(c)>max)
-                max=hm.get(c);
-        }
-
         StringBuilder sb=new StringBuilder();
-
-        while(max>0)
+        for(char i:s.toCharArray())
         {
-            for(char c:hm.keySet())
-            {
-                if(hm.get(c)==max)
-                {
-                    for(int j=0;j<max;j++)
-                    {
-                        sb.append(c);
-                    }
-                }
-            }
-
-            max--;
+            hm.put(i,hm.getOrDefault(i,0)+1);
         }
-
+        List<Character> l=new ArrayList<>(hm.keySet());
+        l.sort((a,b)->hm.get(b)-hm.get(a));
+        for(char c:l)
+        {
+            for(int i=0;i<hm.get(c);i++)
+            {
+                sb.append(c);
+            }
+        }
         return sb.toString();
     }
 }
