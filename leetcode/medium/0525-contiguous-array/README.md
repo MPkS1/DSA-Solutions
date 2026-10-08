@@ -45,9 +45,9 @@ Explanation: [1,1,1,0,0,0] is the longest contiguous subarray with equal number 
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.8 MB  
-**Submitted:** 2026-10-08T00:19:00.638Z  
+**Runtime:** 23 ms (beats 84.19%)  
+**Memory:** 65.3 MB (beats 75.12%)  
+**Submitted:** 2026-10-08T00:19:05.740Z  
 
 ```java
 class Solution {
